@@ -1,54 +1,22 @@
 import Link from 'next/link';
 
 export default function Navbar() {
-  const buttonStyle = {
-    backgroundColor: '#dc2626', // Vermelho
-    color: 'white',
-    padding: '0.5rem 1rem',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    fontWeight: '600',
-    transition: 'background-color 0.3s',
-    display: 'inline-block'
-  };
-
-  const hoverStyle = {
-    backgroundColor: '#b91c1c', // Mais escuro no hover
-  };
+  const links = [
+    { label: 'Home', href: '#home' },
+    { label: 'About Me', href: '#about' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Contact', href: '#contact' },
+  ];
 
   return (
-    <nav style={{
-      padding: '1rem 2rem',
-      background: '#18181b',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      zIndex: 50,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <ul style={{
-        display: 'flex',
-        gap: '1.5rem',
-        listStyle: 'none',
-        margin: 0,
-        padding: 0,
-      }}>
-        {[
-          { label: 'Home', href: '/' },
-          { label: 'About Me', href: '/about-me' },
-          { label: 'Skills', href: '/skills' },
-          { label: 'Projects', href: '/projects' },
-          { label: 'Contact', href: '/contact' },
-        ].map((item) => (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-900 px-8 py-4 flex justify-center">
+      <ul className="flex gap-6 list-none m-0 p-0">
+        {links.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}
-              style={buttonStyle}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = hoverStyle.backgroundColor}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor}
+              className="border-2 border-red-600 opacity-80 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600 hover:text-white"
             >
               {item.label}
             </Link>
