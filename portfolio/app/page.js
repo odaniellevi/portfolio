@@ -42,13 +42,15 @@ export default function Home() {
               </p>
             </FadeIn>
           </div>
-
           <FadeIn delay={1800} duration={800}>
-            <img
-              src="/daniel.png"
-              alt="Minha foto"
-              className="w-100 h-120 rounded-lg border-4 border-red-600 object-cover"
-            />
+            <div className="relative flex items-center justify-center">
+              <div className="absolute w-140 h-120 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
+              <img
+                src="/daniel.png"
+                alt="Me"
+                className="w-100 h-120 rounded-lg border-4 border-red-600 object-cover relative z-20"
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -139,6 +141,23 @@ export default function Home() {
           <hr className="w-100 border-t-4 border-red-600 my-6" />
           <br></br>
           <div className="flex flex-row flex-wrap justify-center gap-8">
+            <div className="flex flex-col items-center">
+              <a
+                href="https://bulls-and-cows-rho.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/bulls&cows.png"
+                  alt="Bulls & Cows Project"
+                  className="w-90 h-50 rounded-lg border-4 border-red-600 object-cover mb-4 transition duration-300 hover:scale-105 hover:shadow-lg"
+                />
+              </a>
+              <div className="text-center">
+                <p className="text-2xl mb-4">Bulls & Cows</p>
+              </div>
+            </div>
+
             <div className="flex flex-col items-center">
               <a
                 href="https://healnet-ipw.vercel.app/"
