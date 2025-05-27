@@ -2,6 +2,7 @@
 
 import "./globals.css";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 function FadeIn({ children, delay = 0, duration = 1000 }) {
   const [visible, setVisible] = useState(false);
@@ -44,11 +45,15 @@ export default function Home() {
           </div>
           <FadeIn delay={1800} duration={800}>
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-140 h-120 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
-              <img
+              <div className="absolute w-160 h-140 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
+
+              <Image
                 src="/daniel.png"
                 alt="Me"
-                className="w-100 h-120 rounded-lg border-4 border-red-600 object-cover relative z-20"
+                width={500}
+                height={480}
+                unoptimized
+                className="w-120 h-140 rounded-lg border-4 border-red-600 object-cover relative z-20"
               />
             </div>
           </FadeIn>
@@ -64,10 +69,11 @@ export default function Home() {
           <br></br>
           <hr className="w-100 border-t-4 border-red-600 my-6" />
           <p className="opacity-85 text-3xl mt-7 max-w-2xl text-left">
-            My name is Daniel, i'm a 19 years old software developer. Graduated
-            in Internet Systems at the Catholic University of Pernambuco. I
-            learned Front End and Back End programming, developed projects and
-            participated in the Porto Digital Technological Residency.
+            My name is Daniel, i&apos;m a 19 years old software developer.
+            Graduated in Internet Systems at the Catholic University of
+            Pernambuco. I learned Front End and Back End programming, developed
+            projects and participated in the Porto Digital Technological
+            Residency.
           </p>
         </div>
       </section>
@@ -82,51 +88,90 @@ export default function Home() {
           <hr className="w-100 border-t-4 border-red-600 my-6" />
           <br></br>
           <div className="flex gap-8">
-            <img src="/java.png" alt="Java Logo" className="w-20 h-20"></img>
+            <Image
+              src="/java.png"
+              alt="Java Logo"
+              width={20}
+              height={20}
+              unoptimized
+              className="w-20 h-20"
+            ></Image>
 
-            <img
+            <Image
               src="/python.png"
               alt="Python Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4 justify-between"
-            ></img>
+            ></Image>
 
-            <img
+            <Image
               src="/react.png"
               alt="React Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4"
-            ></img>
+            ></Image>
           </div>
 
           <div className="flex gap-8 mt-4">
-            <img
+            <Image
               src="/mysql.png"
               alt="MySQL Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4"
-            ></img>
+            ></Image>
 
-            <img
+            <Image
               src="/js.png"
               alt="JavaScript Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4"
-            ></img>
+            ></Image>
 
-            <img
+            <Image
               src="/html.png"
               alt="HTML Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4"
-            ></img>
+            ></Image>
           </div>
 
           <div className="flex gap-8 mt-4">
-            <img src="/css.png" alt="CSS Logo" className="w-20 h-20 mt-4"></img>
+            <Image
+              src="/css.png"
+              alt="CSS Logo"
+              width={20}
+              height={20}
+              unoptimized
+              className="w-20 h-20 mt-4"
+            ></Image>
 
-            <img
+            <Image
               src="/node.png"
               alt="Node.js Logo"
+              width={20}
+              height={20}
+              unoptimized
               className="w-20 h-20 mt-4"
-            ></img>
+            ></Image>
 
-            <img src="/git.png" alt="Git Logo" className="w-20 h-20 mt-4"></img>
+            <Image
+              src="/git.png"
+              alt="Git Logo"
+              width={20}
+              height={20}
+              unoptimized
+              className="w-20 h-20 mt-4"
+            ></Image>
           </div>
         </div>
       </section>
@@ -147,9 +192,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/bulls&cows.png"
                   alt="Bulls & Cows Project"
+                  width={90}
+                  height={50}
+                  unoptimized
                   className="w-90 h-50 rounded-lg border-4 border-red-600 object-cover mb-4 transition duration-300 hover:scale-105 hover:shadow-lg"
                 />
               </a>
@@ -164,9 +212,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/healnet.png"
                   alt="Healnet Project"
+                  width={90}
+                  height={50}
+                  unoptimized
                   className="w-90 h-50 rounded-lg border-4 border-red-600 object-cover mb-4 transition duration-300 hover:scale-105 hover:shadow-lg"
                 />
               </a>
@@ -181,9 +232,12 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <Image
                   src="/conversor.png"
                   alt="Conversor Project"
+                  width={90}
+                  height={50}
+                  unoptimized
                   className="w-90 h-50 rounded-lg border-4 border-red-600 object-cover mb-4 transition duration-300 hover:scale-105 hover:shadow-lg"
                 />
               </a>
@@ -208,43 +262,52 @@ export default function Home() {
             me in one of these ways:
           </p>
 
-        <div className="flex gap-8 mt-20 justify-center">
-              <a
-                href="https://www.linkedin.com/in/imdaniellevi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/linkedin.png"
-                  alt="LinkedIn Icon"
-                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
-                />
-              </a>
+          <div className="flex gap-8 mt-20 justify-center">
+            <a
+              href="https://www.linkedin.com/in/imdaniellevi/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/linkedin.png"
+                alt="LinkedIn Icon"
+                width={15}
+                height={15}
+                unoptimized
+                className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+              />
+            </a>
 
-              <a
-                href="https://wa.me/5581988397114?text=Oi%2C%20quero%20saber%20mais%20sobre%20seus%20serviços!"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/whatsapp.png"
-                  alt="WhatsApp Icon"
-                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
-                />
-              </a>
+            <a
+              href="https://wa.me/5581988397114?text=Oi%2C%20quero%20saber%20mais%20sobre%20seus%20serviços!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/whatsapp.png"
+                alt="WhatsApp Icon"
+                width={15}
+                height={15}
+                unoptimized
+                className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+              />
+            </a>
 
-              <a
-                href="mailto: danilevi2005@outlook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/email.png"
-                  alt="Email Icon"
-                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
-                />
-              </a>
-          </div>  
+            <a
+              href="mailto: danilevi2005@outlook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/email.png"
+                alt="Email Icon"
+                width={15}
+                height={15}
+                unoptimized
+                className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+              />
+            </a>
+          </div>
         </div>
       </section>
     </main>
