@@ -181,12 +181,51 @@ export default function Home() {
         className="min-h-screen px-6 mt-[50px] flex items-center justify-center"
       >
         <div className="flex mt-90 flex-col items-center">
-        <h1 className="text-4xl -mt-95 font-bold">Contact</h1>
-        <br></br>
-        <hr className="w-100 border-t-4 border-red-600 my-6" />
-        <p className="opacity-85 text-2xl mt-7 max-w-2xl text-center">
-          If you are interested in my work or want to know me better, contact me in one of these ways:
-        </p>
+          <h1 className="text-4xl -mt-95 font-bold">Contact</h1>
+          <br></br>
+          <hr className="w-100 border-t-4 border-red-600 my-6" />
+          <p className="opacity-85 text-2xl mt-7 max-w-2xl text-center">
+            If you are interested in my work or want to know me better, contact
+            me in one of these ways:
+          </p>
+
+        <div className="flex gap-8 mt-20 justify-center">
+              <a
+                href="https://www.linkedin.com/in/imdaniellevi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/linkedin.png"
+                  alt="LinkedIn Icon"
+                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+                />
+              </a>
+
+              <a
+                href="https://wa.me/5581988397114?text=Oi%2C%20quero%20saber%20mais%20sobre%20seus%20serviços!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/whatsapp.png"
+                  alt="WhatsApp Icon"
+                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+                />
+              </a>
+
+              <a
+                href="mailto: danilevi2005@outlook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/email.png"
+                  alt="Email Icon"
+                  className="w-15 h-15 transition duration-300 hover:scale-105 hover:shadow-lg"
+                />
+              </a>
+          </div>  
         </div>
       </section>
     </main>
