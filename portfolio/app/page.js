@@ -72,9 +72,49 @@ export default function Home() {
             My name is Daniel, i&apos;m a 19 years old software developer.
             Graduated in Internet Systems at the Catholic University of
             Pernambuco. I learned Front End and Back End programming, developed
-            projects and participated in the Porto Digital Technological
-            Residency.
+            projects and participated in the Porto Digital Technology Residency.
           </p>
+        </div>
+      </section>
+
+      <section
+        id="academic"
+        className="min-h-screen px-6 mt-[10px] flex items-center justify-center"
+      >
+        <div className="flex gap-6 mt-90 flex-col items-center">
+          <h1 className="text-4xl -mt-95 font-bold">Academic</h1>
+          <hr className="w-100 border-t-4 border-red-600 my-6" />
+          <div className="flex gap-30">
+            <div className="border-4 w-110 h-80 border-red-600 bg-none rounded-lg p-6">
+              <br></br>
+              <p className="text-2xl font-bold opacity-85">
+                Undergraduate in Internet Systems at the Catholic University of
+                Pernambuco.
+              </p>
+              <p className="text-1xl text-red-400 font-bold opacity-75">
+                2024.1 - 2026.1
+              </p>
+              <br></br>
+              <p className="text-1xl opacity-80 font-bold text-left">
+                Graduation in progress of the Higher Course in Internet Systems
+                Technology at the Catholic University of Pernambuco.
+              </p>
+            </div>
+            <div className="border-4 w-110 h-80 border-red-600 bg-none rounded-lg p-6">
+              <p className="text-2xl font-bold opacity-85">
+                Porto Digital Technology Residency.
+              </p>
+              <p className="text-1xl text-red-400 font-bold opacity-75">
+                2024.1 - 2026.1
+              </p>
+              <br></br>
+              <p className="text-1xl opacity-80 font-bold text-left">
+                Where I am trained through challenges and courses alongside
+                renowned companies that are partners of Porto Digital in Recife
+                and the Northeast.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
