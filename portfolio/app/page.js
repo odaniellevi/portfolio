@@ -54,7 +54,7 @@ export default function Home() {
                 width={500}
                 height={480}
                 unoptimized
-                className="w-120 h-140 rounded-lg border-4 border-red-600 object-cover relative z-20"
+                className="w-100 h-110 md:w-120 md:h-140 rounded-lg border-4 border-red-600 object-cover relative z-20"
               />
             </div>
           </FadeIn>

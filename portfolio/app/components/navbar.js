@@ -1,10 +1,59 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
+const MenuIcon = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+);
+
+const CloseIcon = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState(0);
+  const menuRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const menuEl = menuRef.current;
+    if (isOpen) {
+      if (menuEl) {
+        setHeight(0);
+        requestAnimationFrame(() => {
+          setHeight(menuEl.scrollHeight);
+        });
+      }
+    } else {
+      setHeight(0);
+      timeoutRef.current = setTimeout(() => {}, 300);
+    }
+    return () => clearTimeout(timeoutRef.current);
+  }, [isOpen]);
 
   const links = [
     { label: "Home", href: "#home" },
@@ -20,47 +69,56 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="text-white text-xl font-bold">Daniel Levi</div>
 
-        {/* Botão de menu (mobile) */}
         <div className="md:hidden">
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="text-white focus:outline-none w-8 h-8"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? (
+              <CloseIcon className="w-8 h-8" />
+            ) : (
+              <MenuIcon className="w-8 h-8" />
+            )}
           </button>
         </div>
 
-        {/* Links no desktop */}
         <ul className="hidden md:flex gap-6 list-none">
-          {links.map((item) => (
-            <li key={item.href}>
+          {links.map(({ label, href }) => (
+            <li key={href}>
               <Link
-                href={item.href}
+                href={href}
                 className="border-2 border-red-600 opacity-80 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600 hover:text-white"
               >
-                {item.label}
+                {label}
               </Link>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Menu mobile */}
-      {isOpen && (
-        <ul className="md:hidden mt-4 flex flex-col items-center gap-4">
-          {links.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="block border-2 border-red-600 opacity-90 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600 hover:text-white"
-                onClick={() => setIsOpen(false)} // Fecha ao clicar
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        ref={menuRef}
+        style={{
+          height: isOpen ? height : 0,
+          opacity: isOpen ? 1 : 0,
+          transition: "height 300ms ease, opacity 300ms ease",
+          overflow: "hidden",
+        }}
+        className="md:hidden mt-4 flex flex-col items-center gap-4"
+      >
+        {links.map(({ label, href }) => (
+          <li key={href}>
+            <Link
+              href={href}
+              className="block border-2 border-red-600 opacity-90 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600 hover:text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
