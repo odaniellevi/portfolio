@@ -26,7 +26,7 @@ function FadeIn({ children, delay = 0, duration = 1000 }) {
 
 export default function Home() {
   return (
-    <main className="bg-[#18181b] pt-24 min-h-screen text-white">
+    <main className="bg-[#18181b] pt-24 min-h-screen text-white overflow-x-hidden">
       {/* HOME */}
       <section id="home" className="px-4">
         <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto gap-8">
@@ -46,7 +46,11 @@ export default function Home() {
 
           <FadeIn delay={1800} duration={800}>
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-80 h-60 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
+              <div
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+               w-80 h-60 sm:w-[25rem] sm:h-[25rem] md:w-[30rem] md:h-[30rem]
+               rounded-full bg-red-500/40 blur-3xl animate-spin z-10"
+              />
 
               <Image
                 src="/daniel.png"
