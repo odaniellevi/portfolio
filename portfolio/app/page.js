@@ -46,7 +46,7 @@ export default function Home() {
 
           <FadeIn delay={1800} duration={800}>
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-160 h-140 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
+              <div className="absolute w-80 h-60 rounded-full bg-red-500/40 blur-3xl animate-spin z-10"></div>
 
               <Image
                 src="/daniel.png"
@@ -54,7 +54,7 @@ export default function Home() {
                 width={500}
                 height={480}
                 unoptimized
-                className="w-100 h-110 md:w-120 md:h-140 rounded-lg border-4 border-red-600 object-cover relative z-20"
+                className="w-80 h-80 md:w-120 md:h-140 rounded-lg border-4 border-red-600 object-cover relative z-20"
               />
             </div>
           </FadeIn>
