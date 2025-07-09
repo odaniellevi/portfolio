@@ -72,8 +72,8 @@ export default function Home() {
           <p className="text-base sm:text-lg md:text-xl opacity-85">
             My name is Daniel, i&apos;m a 19 years old software developer.
             Graduated in Internet Systems at the Catholic University of
-            Pernambuco. I learned Front End and Back End programming, developed
-            projects and participated in the Porto Digital Technology Residency.
+            Pernambuco. I learned Full-Stack Programming, developed projects and
+            participated in the Porto Digital Technology Residency.
           </p>
         </div>
       </section>
